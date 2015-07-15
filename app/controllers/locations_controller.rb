@@ -2,7 +2,8 @@ class LocationsController < ApplicationController
 	before_action :set_user_location, only: [:show, :edit, :update, :destroy]
 	
 	def index
-    @user = current_user 
+    # @user = current_user || User.new
+    @user = User.new
 		@locations = Location.all
 		@hash = Gmaps4rails.build_markers(@locations) do |location, marker|
 			marker.lat location.latitude

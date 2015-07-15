@@ -1,17 +1,62 @@
-Sign Up
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %> 
+
+<style>
+  #sign-up-form {
+
+
+    padding-top: 40px;
+  }
+
+
+</style>
+
+
+
+
+<div class="container" id="sign-up-form">
+<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+      <div class="form-group">
+        <%= f.label :first_name, "First name:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name, "Last name:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :email, "email:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+    </div>
+
+        <div class="form-group">
+        <%= f.label :password, "password:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, "password confirmation:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+    </div>
+
+      <div class="form-group">
+        <div class="col-md-4 control-label"></div>
+         <div class="col-md-5">
+           <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+         </div>
+         </div>
+      </div>
+
+   
+ <% end %>
+</div>
