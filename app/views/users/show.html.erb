@@ -1,0 +1,29 @@
+<div>
+  Welcome, <%= @user.email %> 
+</div>
+ <h5><b>First Name:</b> <%=@user.first_name %> </h5>
+            <h5><b>Last Name:</b> <%=@user.last_name %></h5>
+
+
+
+        <div class="right-content col-md-6 col-md-offset-1" >
+      
+      <div class="page-header">
+        <h2><small>Your Locations</small></h2>
+        <table class="reference" style="width:100%">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>name</th>    
+        </tr>
+        <% @user.locations.each do |location| %>
+        <tr>
+          <td><%=  "#{location.created_at.strftime("%m/%d/%Y")}" %></td>
+          <td><%= "#{location.address}" %></td>
+          <td><%=  "$#{location.name}" %></td>    
+        </tr>
+        <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
