@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
 	def index
     @user = current_user 
     # @user = User.find(params[:user_id])
-		@locations = Location.all
+		@locations = current_user.locations.all
 		@hash = Gmaps4rails.build_markers(@locations) do |location, marker|
 			marker.lat location.latitude
 			marker.lng location.longitude

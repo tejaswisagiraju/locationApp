@@ -12,20 +12,16 @@
 
 <% if current_user %>
 
-      <h1>Listing Places</h1>
 
-        <table>
-          <thead>
+<div class="page-header">
+      <h2><small>Listing Places</small></h2>
+      <table class="reference" style="width:30%">
               <tr>
-    
-              <th>Address</th>
-      <th>Description</th>
-      <th>Title</th>
+                <th>Title</th>
+                <th>Address</th>
+                <th>Description</th>
       
-    </tr>
-  </thead>
-
-  <tbody>
+              </tr>
     <% @user.locations.each do |location| %>
       <tr>
    
@@ -37,8 +33,7 @@
         <td><%= link_to 'Destroy', "/users/:user_id/locations/:id", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+  </table>
 
 <br>
 
@@ -80,7 +75,7 @@
 // var hyderabadBounds = new google.maps.LatLngBounds( southWest, northEast );
 var mapOptions = 
 {
-    maxZoom:2,
+    maxZoom:10,
     minZoom:2,
 //     bounds: hyderabadBounds
 };
@@ -91,7 +86,7 @@ handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
-  // handler.getMap().setCenter(new google.maps.LatLng(42.359, -71.090413));
+  handler.getMap().setCenter(new google.maps.LatLng(42.359, -71.090413));
 });
 
 </script>
