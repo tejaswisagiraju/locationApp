@@ -2,8 +2,8 @@ class LocationsController < ApplicationController
 	before_action :set_user_location, only: [:show, :edit, :update, :destroy]
 	
 	def index
-    # @user = current_user || User.new
-    @user = User.new
+    @user = current_user 
+    # @user = User.find(params[:user_id])
 		@locations = Location.all
 		@hash = Gmaps4rails.build_markers(@locations) do |location, marker|
 			marker.lat location.latitude
@@ -18,7 +18,9 @@ class LocationsController < ApplicationController
 
 	def new
 		@location = Location.new
-    @user = User.find(params[user_id])
+    # @user = User.find(params[:user_id])
+    # @user = User.find(params[:id])
+    @user = current_user 
 
 	end
 
@@ -34,13 +36,15 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to user_location_path, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
         format.json { render json: @location.errors, status: :unprocessable_entity }
       end
     end
+
+    
   end
 
     def update

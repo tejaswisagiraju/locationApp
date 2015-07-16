@@ -1,4 +1,7 @@
-<%= form_for(@location) do |f| %>
+<!-- form_for @user, url: student_path(@user), html: { method: :put } do |f| -->
+
+
+<%= form_for @location, url: user_location_path do |f| %>
   <% if @location.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
