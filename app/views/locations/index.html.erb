@@ -69,26 +69,28 @@
 
 
 <script type="text/javascript">
+$( document ).ready(function() {
 
 // var southWest = new google.maps.LatLng( 42.340, -71.20 );
 // var northEast = new google.maps.LatLng( 42.370, -71.0 );
 // var hyderabadBounds = new google.maps.LatLngBounds( southWest, northEast );
 var mapOptions = 
 {
-    maxZoom:10,
-    minZoom:2,
-//     bounds: hyderabadBounds
+    maxZoom:3,
+    minZoom:1,
+    // bounds: hyderabadBounds
 };
 
+ 
 
 handler = Gmaps.build('Google', {markers: { maxRandomDistance: null} });
 handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
-  handler.getMap().setCenter(new google.maps.LatLng(42.359, -71.090413));
+  // handler.getMap().setCenter(new google.maps.LatLng(0, 0));
 });
-
+});
 </script>
 
 
