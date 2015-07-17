@@ -69,7 +69,6 @@ function initMap(){
   };
 
    
-
   handler = Gmaps.build('Google', {markers: { maxRandomDistance: null} });
   handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -77,10 +76,8 @@ function initMap(){
     handler.fitMapToBounds();
 
   });
+  
  }
-
-
-
 
 
 
