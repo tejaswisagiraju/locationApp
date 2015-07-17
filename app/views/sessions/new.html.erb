@@ -1,29 +1,8 @@
 
-<style>
-
-
-#sign-in-form {
-
-	padding-top: 40px;
-
-}
-
-
-
-  #hello {
-
-  
-    padding-bottom: 25px;
-    text-align: center;
-  }
-
-</style>
-
-
 
  <div class="container" id="sign-in-form">
 
-  <div class="container" id="hello1">
+  <div class="container" id="sign-in-text">
           <h1><small> Login here! </small></h1>
       </div>
 <%= form_for :user, url:"/sessions",method:"post",:html => {:class => "form-horizontal center"} do |f| %>

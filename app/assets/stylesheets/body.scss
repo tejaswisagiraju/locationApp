@@ -1,0 +1,212 @@
+ 
+
+//locations
+ #map {
+    height: 550px;
+    border: dashed;
+    border-color: #7f8c8d;
+  }
+
+  #heading-text {
+  
+    padding-bottom: 25px;
+    text-align: center;
+  }
+
+//sessions
+  #sign-in-form {
+
+	padding-top: 40px;
+
+}
+
+
+  #sign-in-text {
+
+  
+    padding-bottom: 25px;
+    text-align: center;
+  }
+
+//navbar
+
+#navbar {
+    background-color: #2ecc71;
+
+}
+
+
+//users
+
+  #sign-up-form {
+
+
+    padding-top: 40px;
+  }
+
+  #sign-up-text {
+
+  
+    padding-bottom: 25px;
+    text-align: center;
+  }
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  
+  float: none;
+ margin: 0 auto;
+ width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+border-radius: 50%;
+ margin-left: 50px;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  text-transform: uppercase;
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+  overflow: scroll;
+}
+
+//welcome
+
+
+#home-page {
+ background:url("http://mike.teczno.com/img/osm-terrain/DC.jpg");
+   background-size:cover;
+   background-position:center center;
+   background-attachment:fixed;
+}
+
+#splashHeader {
+	margin: 0;
+	color: white;
+	text-align: center;
+	font-size: 80px;
+	padding-top: 20px;
+}
+
+#box {
+	background: black;
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.7), rgba(0,0,0,.7));
+	background: -moz-linear-gradient(bottom,rgba(0,0,0,.7), rgba(0,0,0,.7));
+	height: 200px;
+	width: 600px;
+	position: relative;
+	top: 150px;
+	margin: 0 auto;
+	font-family: Courier New;
+}
+
+#splashPar {
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+#buttons {
+	position: relative;
+	top: 175px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+.form-top {
+	width: 700px;
+	margin-top: 20px;
+}

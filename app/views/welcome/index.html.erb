@@ -1,75 +1,22 @@
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 
 
- <!--    background-image: url("http://i3.download.fd.pchome.net/t_1280x1024/g1/M00/0F/13/oYYBAFVMDwSIMYjyAAUHtN-hZn0AACd3AEi49AABQfM220.jpg"); -->
+<body id="home-page">
 
-<style>
-
-
-body {
- background:url("http://mike.teczno.com/img/osm-terrain/DC.jpg");
-   background-size:cover;
-   background-position:center center;
-   background-attachment:fixed;
-}
-
-#splashHeader {
-	margin: 0;
-	color: white;
-	text-align: center;
-	font-size: 80px;
-	padding-top: 20px;
-}
-
-#box {
-	background: black;
-	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.7), rgba(0,0,0,.7));
-	background: -moz-linear-gradient(bottom,rgba(0,0,0,.7), rgba(0,0,0,.7));
-	height: 200px;
-	width: 600px;
-	position: relative;
-	top: 150px;
-	margin: 0 auto;
-	font-family: Courier New;
-}
-
-#splashPar {
-	color: white;
-	text-align: center;
-	margin-top: 20px;
-	font-size: 20px;
-}
-
-#buttons {
-	position: relative;
-	top: 175px;
-	margin: 0 auto;
-	text-align: center;
-
-}
-
-.form-top {
-	width: 700px;
-	margin-top: 20px;
-}
-
-</style>
-<body>
-
-<div id="wrapper" class="container">
+	<div id="wrapper" class="container">
 		<div class="container" id="box">
 			<h1 id="splashHeader">LocationApp</h1>
 			<p id="splashPar">See Where your friends are traveling</p>	
 		</div>
 
-	<div id="buttons">	
-		<%= link_to "Sign up", new_user_path, class: "btn btn-danger" %>
-		<%= link_to "Login", sign_in_path, class: "btn btn-primary" %>
-		<!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#signup-form">Signup</button> -->
+		<div id="buttons">	
+			<%= link_to "Sign up", new_user_path, class: "btn btn-danger" %>
+			<%= link_to "Login", sign_in_path, class: "btn btn-primary" %>
 
-	
+		</div>
+
 	</div>
-
-</div>
 
 </body>
 
@@ -78,5 +25,3 @@ body {
 
 
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
