@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user
+  before_action :set_user
 
   def index
     @users = User.all
@@ -13,13 +13,24 @@ class UsersController < ApplicationController
 
   def create
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
-    @user = User.create(user_params)
-    login(@user) # <-- login the user
-    redirect_to "/users/#{@user.id}" # <-- go to show
+    @user = User.new(user_params)
+    if @user.save
+      login @user
+      flash[:success] = "Sign up successful."
+      redirect_to user_show_path(current_user)
+    else
+      flash[:danger] = "Account already exists. Please try again."
+      redirect_to new_user_path
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    if current_user == @user
+      else
+          flash[:warning] = "Sorry, you can only view your own profile."
+          redirect_to user_show_path(current_user)
+      end
    
   end
 

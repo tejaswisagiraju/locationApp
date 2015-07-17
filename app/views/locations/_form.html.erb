@@ -1,41 +1,53 @@
 <!-- form_for @user, url: student_path(@user), html: { method: :put } do |f| -->
 
 
-<%= form_for @location, url: user_location_path do |f| %>
-  <% if @location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="container" id="heading-title">
 
-      <ul>
-      <% @location.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+  <h1><small> Create a new location </small></h1> 
+
+</div>
+
+</br>
+</br>
+<div class="container">
+
+
+<%= form_for @location,url: user_location_path,  :html => {:class => "form-horizontal center"} do |f| %>
+      <div class="form-group">
+        <%= f.label :address, "Where are you going(address):", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :address,required: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :description, "Description(What are you gonna do):", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_area :description,required: true, class: "form-control" %>
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.hidden_field :user_id, value: @user.id %>
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="form-group">
+        <%= f.label :name, "When are you gonna be there:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :name,required: true, class: "form-control" %>
+        </div>
+    </div>
+
+    
+          <%= f.hidden_field :user_id, value: @user.id %>
+      
+    
+
+      <div class="form-group">
+        <div class="col-md-4 control-label"></div>
+         <div class="col-md-5">
+           <%= f.submit "Submit", class: "btn btn-default btn-primary" %>  
+         </div>
+         </div>
+      </div>
+
+   
+ <% end %>
+</div>
+

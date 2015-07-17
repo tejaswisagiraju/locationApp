@@ -4,34 +4,29 @@ class LocationsController < ApplicationController
 	def index
 
     if current_user
-    @user = current_user 
-    # @user = User.find(params[:user_id])
-		 @locations = current_user.locations.all
-		@hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-			marker.lat location.latitude
-			marker.lng location.longitude
-			marker.infowindow location.description
-    end
+      @user = current_user
+		  @locations = @user.locations.all
     else
-      @user = current_user 
-    # @user = User.find(params[:user_id])
-    @locations = Location.all
-    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
-      marker.infowindow location.description
-     end
-		end
+       @locations = Location.all
+    end
 
-	end
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+			marker.lat location.latitude
+		  marker.lng location.longitude
+      # marker.infowindow @user.first_name
+			marker.infowindow location.description
+
+    
+
+    end
+      
+  end
 
 	def show
 	end
 
 	def new
 		@location = Location.new
-    # @user = User.find(params[:user_id])
-    # @user = User.find(params[:id])
     @user = current_user 
 
 	end
